@@ -1,0 +1,109 @@
+{
+    "name": "AR MUSSIC BOT",
+    "logo": "https://telegra.ph/file/e2749b184d471ba475318.jpg",
+    "description": "Veez Music project allow you to stream music trought the telegram voice chat feature.",
+    "keywords": ["am"],
+    "repository": "https://github.com/syahrizalemano/ar2",
+    "stack": "container",
+    "env": {
+        "SESSION_NAME": {
+            "description": "fill with the pyrogram session string",
+            "required": true
+        },
+        "BOT_TOKEN": {
+            "description": "your bot token from @BotFather",
+            "required": true
+            
+        },
+        "BOT_NAME": {
+            "description": "your music bot name.",
+            "required": true,
+            "value": "ARRMSSCBOT"
+        },
+        "OWNER_ID": {
+            "description": "fill with your telegram id as the owner of the bot",
+            "required": true,
+            "value": "1837386113"
+        },
+        "DATABASE_URL": {
+            "description": "fill with the mongodb url get from cloud.mongodb.com",
+            "required": true,
+            "value": "mongodb+srv://armsc:armsc@armsc.zgrro.mongodb.net/armsc?retryWrites=true&w=majority"
+        },
+        "LOG_CHANNEL": {
+            "description": "create a private channel and get the channel id, add your bot as admin to the channel too",
+            "required": true,
+            "value": ""
+        },
+        "BROADCAST_AS_COPY": {
+            "description": "choose one between False and True, if you don't know what this is, ask to @VeezSupportGroup on telegram",
+            "required": false,
+            "value": "False"
+        },
+        "BOT_USERNAME": {
+            "description": "fill with your bot username without @",
+            "required": true,
+            "value": "ARMUSSIC"
+        },
+        "ASSISTANT_NAME": {
+            "description": "fill with the assistant username without @",
+            "required": true,
+            "value": "ARMSSC ASSISTANT"
+        },
+        "BG_IMAGE": {
+            "description": "fill with your costum background image link",
+            "required": true,
+            "value": "https://telegra.ph/file/f5bdd837b4536b9998e14.png"
+        },
+        "THUMB_IMG": {
+            "description": "fill with costum thumbnail image it's different with bg_image",
+            "required": true,
+            "value": "https://telegra.ph/file/12c7bb147d1338286a50a.png"
+        },
+        "OWNER_NAME": {
+            "description": "fill with your username without @",
+            "required": true,
+            "value": "ANO"
+        },
+        "API_ID": {
+            "description": "your App ID from my.telegram.org/apps",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "your Api hash from my.telegram.org/apps",
+            "required": true
+        },
+        "SUDO_USERS": {
+            "description": "fill with the user id who can access all function in your bot (separate with space).",
+            "required": true
+        },
+        "DURATION_LIMIT": {
+            "description": "max duration for video to download (in minutes).",
+            "required": true,
+            "value": "300"
+        },
+        "PMPERMIT": {
+            "description": "pm-permit for assistant.",
+            "required": false,
+            "value": "ENABLE"
+        },
+        "UPDATES_CHANNEL": {
+            "description": "if you have channel fill the channel username here without @",
+            "required": true,
+            "value": "anochannel"
+        },
+        "GROUP_SUPPORT": {
+            "description": "if you have group fill the group username here without @",
+            "required": true,
+            "value": "arSupportGroup"
+        }
+    },
+    "buildpacks": [
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
