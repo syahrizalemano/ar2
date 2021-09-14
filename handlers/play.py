@@ -504,18 +504,18 @@ async def play(_, message: Message):
                 f"❌ **lagu dengan durasi lebih dari** `{DURATION_LIMIT}` **menit tidak dapat diputar!**"
             )
         keyboard = InlineKeyboardMarkup(
-            
+            [
                 [
                     InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
                     InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls"),
                 ],[
                     InlineKeyboardButton("👤 MANAGE", url="https://t.me/bcddgblg"),
-					InlineKeyboardButton("👥 OWNER", url="https://t.me/sntaiboss")
+                    InlineKeyboardButton("👥 OWNER", url="https://t.me/sntaiboss")
                 ],
             ]
         )
         file_name = get_file_name(audio)
-        title = file_name
+        title = file_
         thumb_name = "https://telegra.ph/file/12c7bb147d1338286a50a.png"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
@@ -552,13 +552,13 @@ async def play(_, message: Message):
         dlurl=url
         dlurl=dlurl.replace("youtube","youtubepp")
         keyboard = InlineKeyboardMarkup(
-            
+            [
                 [
                     InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
                     InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls"),
                 ],[
                     InlineKeyboardButton("👤 MANAGE", url="https://t.me/bcddgblg"),
-					InlineKeyboardButton("👥 OWNER", url="https://t.me/sntaiboss")
+                    InlineKeyboardButton("👥 OWNER", url="https://t.me/sntaiboss")
                 ],
             ]
         )
@@ -637,17 +637,17 @@ async def play(_, message: Message):
             dlurl=url
             dlurl=dlurl.replace("youtube","youtubepp")
             keyboard = InlineKeyboardMarkup(
-            
+            [
                 [
                     InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
                     InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls"),
                 ],[
                     InlineKeyboardButton("👤 MANAGE", url="https://t.me/bcddgblg"),
-					InlineKeyboardButton("👥 OWNER", url="https://t.me/sntaiboss")
+                    InlineKeyboardButton("👥 OWNER", url="https://t.me/sntaiboss")
                 ],
             ]
         )
-            requested_by = message.from_user.first_name
+        requsted_by = message.from_user.first_name
             await generate_cover(title, thumbnail)
             file_path = await converter.convert(youtube.download(url))   
     chat_id = get_chat_id(message.chat)
@@ -737,13 +737,13 @@ async def lol_cb(b, cb):
     dlurl=url
     dlurl=dlurl.replace("youtube", "youtubepp")
     keyboard = InlineKeyboardMarkup(
-            
+            [
                 [
                     InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
                     InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls"),
                 ],[
                     InlineKeyboardButton("👤 MANAGE", url="https://t.me/bcddgblg"),
-					InlineKeyboardButton("👥 OWNER", url="https://t.me/sntaiboss")
+                    InlineKeyboardButton("👥 OWNER", url="https://t.me/sntaiboss")
                 ],
             ]
         )
@@ -887,13 +887,13 @@ async def ytplay(_, message: Message):
     dlurl=url
     dlurl=dlurl.replace("youtube","youtubepp")
     keyboard = InlineKeyboardMarkup(
-        [
+            [
                 [
                     InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
                     InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls"),
                 ],[
                     InlineKeyboardButton("👤 MANAGE", url="https://t.me/bcddgblg"),
-					InlineKeyboardButton("👥 OWNER", url="https://t.me/sntaiboss")
+                    InlineKeyboardButton("👥 OWNER", url="https://t.me/sntaiboss")
                 ],
             ]
         )
