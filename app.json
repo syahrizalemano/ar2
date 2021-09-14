@@ -104,6 +104,9 @@
     },
     {
       "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/stomita/heroku-buildpack-mongodb.git"
     }
-  ]
+ ]
 }
