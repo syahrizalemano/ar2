@@ -509,7 +509,7 @@ async def play(_, message: Message):
                     InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
                     InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls")
                 ],
-			[
+            [
                 [
                     InlineKeyboardButton("👤 MANAGE", url="https://t.me/bcddgblg"),
                     InlineKeyboardButton("👥 OWNER", url="https://t.me/sntaiboss")
@@ -558,7 +558,7 @@ async def play(_, message: Message):
                     InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
                     InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls")
                 ],
-			[
+            [
                 [
                     InlineKeyboardButton("👤 MANAGE", url="https://t.me/bcddgblg"),
                     InlineKeyboardButton("👥 OWNER", url="https://t.me/sntaiboss")
@@ -644,7 +644,7 @@ async def play(_, message: Message):
                     InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
                     InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls")
                 ],
-			[
+            [
                 [
                     InlineKeyboardButton("👤 MANAGE", url="https://t.me/bcddgblg"),
                     InlineKeyboardButton("👥 OWNER", url="https://t.me/sntaiboss")
@@ -745,7 +745,7 @@ async def lol_cb(b, cb):
                     InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
                     InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls")
                 ],
-			[
+            [
                 [
                     InlineKeyboardButton("👤 MANAGE", url="https://t.me/bcddgblg"),
                     InlineKeyboardButton("👥 OWNER", url="https://t.me/sntaiboss")
@@ -891,12 +891,12 @@ async def ytplay(_, message: Message):
     dlurl=url
     dlurl=dlurl.replace("youtube","youtubepp")
     keyboard = InlineKeyboardMarkup(
-        [
+            [
                 [
                     InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
                     InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls")
                 ],
-			[
+            [
                 [
                     InlineKeyboardButton("👤 MANAGE", url="https://t.me/bcddgblg"),
                     InlineKeyboardButton("👥 OWNER", url="https://t.me/sntaiboss")
