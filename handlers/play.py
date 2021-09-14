@@ -647,7 +647,7 @@ async def play(_, message: Message):
                 ],
             ]
         )
-        requested_by = message.from_user.first_name
+            requested_by = message.from_user.first_name
             await generate_cover(title, thumbnail)
             file_path = await converter.convert(youtube.download(url))   
     chat_id = get_chat_id(message.chat)
