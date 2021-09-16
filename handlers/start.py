@@ -49,7 +49,6 @@ async def start_(client: Client, message: Message):
                 [
                     InlineKeyboardButton(
                         "➕ Tambahkan Saya Ke Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
-                ],[
                     InlineKeyboardButton(
                         "❓ Tutorial Penggunaan", callback_data="cbhowtouse")
                 ],[
@@ -58,10 +57,10 @@ async def start_(client: Client, message: Message):
                     ),
                     InlineKeyboardButton(
                         "👤 MANAGE", url=f"https://t.me/bcddgblg"),
-                ],[
                     InlineKeyboardButton(
                         "👥 OWNER", url=f"https://t.me/sntaiboss"                  
                     )
+                ],                  
                 ]
             ]
         ),
