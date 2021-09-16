@@ -103,10 +103,7 @@
       "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
     },
     {
-      "url": "heroku/python"
-    },
-    {
-      "url": "https://github.com/stomita/heroku-buildpack-mongodb.git"
+      "url": "https://github.com/stomita/heroku-buildpack-mongodb.git""
     }
- ]
+  ]
 }
