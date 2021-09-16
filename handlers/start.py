@@ -57,7 +57,7 @@ MY NAME
                     InlineKeyboardButton(
                         "👥 OWNER", url=f"https://t.me/sntaiboss"                  
                     )
-                ],                  
+                ]                  
                 ]
             ]
         ),
