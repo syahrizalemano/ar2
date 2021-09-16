@@ -37,18 +37,18 @@ async def start_(client: Client, message: Message):
 
 
 
-"╔═══╦═══╦═══╗\n"
-"║╔═╗║╔═╗║╔═╗║\n"
-"║║─║║╚═╝║║─║║\n"
-"║╚═╝║╔╗╔╣╚═╝║\n"
-"║╔═╗║║║╚╣╔═╗║\n"
-"╚╝─╚╩╝╚═╩╝─╚╝\n"
+╔═══╦═══╦═══╗\n"
+║╔═╗║╔═╗║╔═╗║\n"
+║║─║║╚═╝║║─║║\n"
+║╚═╝║╔╗╔╣╚═╝║\n"
+║╔═╗║║║╚╣╔═╗║\n"
+╚╝─╚╩╝╚═╩╝─╚╝\n"
 </b>""",
         reply_markup=InlineKeyboardMarkup(
             [ 
                 [
                     InlineKeyboardButton(
-                        "➕ Tambahkan Saya Ke Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+                        "➕ Tambahkan Saya Ke Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
                 ],[
                     InlineKeyboardButton(
                         "❓ Tutorial Penggunaan", callback_data="cbhowtouse")
@@ -57,7 +57,7 @@ async def start_(client: Client, message: Message):
                          "🔤 Commands", callback_data="cbcmds"
                     ),
                     InlineKeyboardButton(
-                        "👤 MANAGE", url=f"https://t.me/bcddgblg")
+                        "👤 MANAGE", url=f"https://t.me/bcddgblg"),
                 ],[
                     InlineKeyboardButton(
                         "👥 OWNER", url=f"https://t.me/sntaiboss"                  
