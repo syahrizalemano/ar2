@@ -32,18 +32,15 @@ async def _human_time_duration(seconds):
 @Client.on_message(command(["start", f"start@{BOT_USERNAME}"]) & filters.private & ~filters.edited)
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""<b>✨ **Welcome {message.from_user.first_name}** \n
-🚹 **[{BOT_NAME}](https://t.me/{BOT_USERNAME})
+        f"""👤 **Welcome {message.from_user.first_name}** \n
+MY NAME      
+ ╔═══╦═══╦═══╗\n"
+ ║╔═╗║╔═╗║╔═╗║\n"
+ ║║─║║╚═╝║║─║║\n"
+ ║╚═╝║╔╗╔╣╚═╝║\n"
+ ║╔═╗║║║╚╣╔═╗║\n"
+ ╚╝─╚╩╝╚═╩╝─╚╝\n"
 
-
-
-╔═══╦═══╦═══╗\n"
-║╔═╗║╔═╗║╔═╗║\n"
-║║─║║╚═╝║║─║║\n"
-║╚═╝║╔╗╔╣╚═╝║\n"
-║╔═╗║║║╚╣╔═╗║\n"
-╚╝─╚╩╝╚═╩╝─╚╝\n"
-</b>""",
         reply_markup=InlineKeyboardMarkup(
             [ 
                 [
