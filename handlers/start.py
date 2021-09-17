@@ -32,35 +32,29 @@ async def _human_time_duration(seconds):
 @Client.on_message(command(["start", f"start@{BOT_USERNAME}"]) & filters.private & ~filters.edited)
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""👤 **Welcome {message.from_user.first_name}** \n
-MY NAME      
- ╔═══╦═══╦═══╗\n"
- ║╔═╗║╔═╗║╔═╗║\n"
- ║║─║║╚═╝║║─║║\n"
- ║╚═╝║╔╗╔╣╚═╝║\n"
- ║╔═╗║║║╚╣╔═╗║\n"
- ╚╝─╚╩╝╚═╩╝─╚╝\n"
-,
+        f"""<b>✋ Hallo, My name
+
+░█████╗░██████╗░░█████╗░
+██╔══██╗██╔══██╗██╔══██╗
+███████║██████╔╝███████║
+██╔══██║██╔══██╗██╔══██║
+██║░░██║██║░░██║██║░░██║
+╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝𝗶𝗼𝗻 𝗮𝗯𝗼𝘂𝘁 𝗮𝗹𝗹 𝗳𝗲𝗮𝘁𝘂𝗿𝗲 𝗼𝗳 𝘁𝗵𝗶𝘀 𝗯𝗼𝘁, 𝗷𝘂𝘀𝘁 𝘁𝘆𝗽𝗲 /help**
+</b>""",
         reply_markup=InlineKeyboardMarkup(
-            [ 
+           [
                 [
                     InlineKeyboardButton(
-                        "➕ Tambahkan Saya Ke Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+                        "➕ Add me to your Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
                     InlineKeyboardButton(
-                        "❓ Tutorial Penggunaan", callback_data="cbhowtouse")
+                        "❓ How to use Me", callback_data="cbhowtouse")
                 ],[
-                    InlineKeyboardButton(
-                         "🔤 Commands", callback_data="cbcmds"
-                    ),
-                    InlineKeyboardButton(
-                        "👤 MANAGE", url=f"https://t.me/bcddgblg"),
-                    InlineKeyboardButton(
-                        "👥 OWNER", url=f"https://t.me/sntaiboss"                  
-                    )
-                ]                  
-                ]
+                    InlineKeyboardButton("👤 MANAGE", url="https://t.me/bcddgblg"),
+                    InlineKeyboardButton("👥 OWNER", url="https://t.me/sntaiboss")
+                ],
             ]
-        ),
+        )
+                
      disable_web_page_preview=True
     )
 
@@ -71,28 +65,27 @@ async def start(client: Client, message: Message):
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await message.reply_text(
-        f"""🎛 **bot berjalan**\n<b>💹 **uptime:**</b> `{uptime}`""",
+        f"""✅ **bot is running**\n<b>💠 **uptime:**</b> `{uptime}`""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "👤 MANAGE", url=f"https://t.me/bcddgblg"
+                        "✨ Group", url=f"https://t.me/{GROUP_SUPPORT}"
                     ),
                     InlineKeyboardButton(
-                        "👥 OWNER", url=f"https://t.me/sntaiboss"
+                        "📣 Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
                     )
                 ]
             ]
+        )
     )
 
 @Client.on_message(command(["help", f"help@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
 async def help(client: Client, message: Message):
     await message.reply_text(
-        f"""<b>👋🏻 **Halo** {message.from_user.mention()}</b>
-
-**Silahkan tekan tombol dibawah untuk membaca penjelasan dan melihat daftar perintah yang tersedia !**
-
-📌 __Powered by {BOT_NAME} A.I""",
+        f"""<b>👋🏻 **Hello** {message.from_user.mention()}</b>
+**Please press the button below to read the explanation and see the list of available commands !**
+⚡ __Powered by {BOT_NAME} A.I""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -108,10 +101,8 @@ async def help(client: Client, message: Message):
 async def help_(client: Client, message: Message):
     await message.reply_text(
         f"""<b>💡 Hello {message.from_user.mention} welcome to the help menu !</b>
-
-**Menu perintah**
-
-📌 __Powered by {BOT_NAME} A.I__""",
+**in this menu you can open several available command menus, in each command menu there is also a brief explanation of each command**
+⚡ __Powered by {BOT_NAME} A.I__""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -148,7 +139,7 @@ async def help_(client: Client, message: Message):
 @Client.on_message(command(["ping", f"ping@{BOT_USERNAME}"]) & ~filters.edited)
 async def ping_pong(client: Client, message: Message):
     start = time()
-    m_reply = await message.reply_text("mengeping jaringan...")
+    m_reply = await message.reply_text("pinging...")
     delta_ping = time() - start
     await m_reply.edit_text(
         "🏓 `PONG!!`\n"
