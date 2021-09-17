@@ -39,7 +39,7 @@ async def start_(client: Client, message: Message):
 "███████║██████╔╝███████║\n"
 "██╔══██║██╔══██╗██╔══██║\n"
 "██║░░██║██║░░██║██║░░██║\n"
-"╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝\n"𝗶𝗼𝗻 𝗮𝗯𝗼𝘂𝘁 𝗮𝗹𝗹 𝗳𝗲𝗮𝘁𝘂𝗿𝗲 𝗼𝗳 𝘁𝗵𝗶𝘀 𝗯𝗼𝘁, 𝗷𝘂𝘀𝘁 𝘁𝘆𝗽𝗲 /help**
+"╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝\n"
 """,
         reply_markup=InlineKeyboardMarkup(
            [
@@ -47,10 +47,10 @@ async def start_(client: Client, message: Message):
                     InlineKeyboardButton(
                         "➕ add me", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
                     InlineKeyboardButton(
-                        "❓ Tutorial", url=f"https://telegra.ph/AR-MUSIC-09-17-2")
+                        "❓ Tutorial", url=f"https://telegra.ph/AR-MUSIC-09-17-2"),
                 ],[
-                    InlineKeyboardButton("👤 MANAGE", url="https://t.me/bcddgblg"),
-                    InlineKeyboardButton("👥 OWNER", url="https://t.me/sntaiboss")
+                    InlineKeyboardButton("👤 MANAGE", url=f"https://t.me/bcddgblg"),
+                    InlineKeyboardButton("👥 OWNER", url=f"https://t.me/sntaiboss")
                 ],
             ]
         )
