@@ -83,7 +83,6 @@ async def start(client: Client, message: Message):
                     )
                 ]
             ]
-        )
     )
 
 @Client.on_message(command(["help", f"help@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
