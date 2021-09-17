@@ -90,7 +90,7 @@ async def start(client: Client, message: Message):
                         "👤 MANAGE", url="https://t.me/bcddgblg"
                     ),
                     InlineKeyboardButton(
-                        "👥 OWNER", url="https://t.me/sntaiboss")
+                        "👥 OWNER", url="https://t.me/sntaiboss"
                     )
                 ]
             ]
