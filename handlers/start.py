@@ -73,8 +73,6 @@ Commands 📌
                 ],
             ]
         )
-                
-     disable_web_page_preview=True
     )
 
 
