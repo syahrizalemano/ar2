@@ -35,17 +35,14 @@ async def start_(client: Client, message: Message):
         f"""✋ Hallo {message.from_user.first_name} 
 My name
 
-░█████╗░██████╗░░█████╗░\n"
-██╔══██╗██╔══██╗██╔══██╗\n"
-███████║██████╔╝███████║\n"
-██╔══██║██╔══██╗██╔══██║\n"
-██║░░██║██║░░██║██║░░██║\n"
-╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝\n"
+
+███████████████████
+██▀▄─██▄─▄▄▀██▀▄─██
+██─▀─███─▄─▄██─▀─██
+▀▄▄▀▄▄▀▄▄▀▄▄▀▄▄▀▄▄▀
 
 Saya adalah bot musik dapat Memutar Lagu di Voice Chat Group Dengan cara yang Mudah.
-""",
 
-f"""
 **Pengaturan**
 
 1. Jadikan bot sebagai admin
