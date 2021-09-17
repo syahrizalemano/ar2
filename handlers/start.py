@@ -32,7 +32,8 @@ async def _human_time_duration(seconds):
 @Client.on_message(command(["start", f"start@{BOT_USERNAME}"]) & filters.private & ~filters.edited)
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""✋ Hallo, My name
+        f"""✋ Hallo {message.from_user.first_name} 
+My name
 
 "░█████╗░██████╗░░█████╗░\n"
 "██╔══██╗██╔══██╗██╔══██╗\n"
@@ -40,14 +41,32 @@ async def start_(client: Client, message: Message):
 "██╔══██║██╔══██╗██╔══██║\n"
 "██║░░██║██║░░██║██║░░██║\n"
 "╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝\n"
+
+Saya adalah bot musik dapat Memutar Lagu di Voice Chat Group Dengan cara yang Mudah.
 """,
+
+f"""
+**Pengaturan**
+
+1. Jadikan bot sebagai admin
+2. Mulai obrolan suara / VCG
+3. Ketik `/userbotjoin` dan coba /play <nama lagu>
+
+Commands 📌
+/play <nama lagu> - play song you requested
+/playlist - Tampilkan daftar yang sedang diputar
+/song <song name> - unduh lagu
+/search <query> - cari video di youtube
+/vsong <song name> - download video
+/lyric <song name> - lyrics
+/vk <song name> - buat lagu tanpa download
+/help untuk commands lainnya
+,
         reply_markup=InlineKeyboardMarkup(
            [
                 [
                     InlineKeyboardButton(
-                        "➕ add me", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
-                    InlineKeyboardButton(
-                        "❓ Tutorial", url=f"https://telegra.ph/AR-MUSIC-09-17-2"),
+                        "➕ Add me", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
                 ],[
                     InlineKeyboardButton("👤 MANAGE", url=f"https://t.me/bcddgblg"),
                     InlineKeyboardButton("👥 OWNER", url=f"https://t.me/sntaiboss")
