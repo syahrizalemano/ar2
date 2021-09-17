@@ -32,7 +32,7 @@ async def _human_time_duration(seconds):
 @Client.on_message(command(["start", f"start@{BOT_USERNAME}"]) & filters.private & ~filters.edited)
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""<b>✋ Hallo, My name
+        f"""✋ Hallo, My name
 
 ░█████╗░██████╗░░█████╗░
 ██╔══██╗██╔══██╗██╔══██╗
@@ -40,7 +40,7 @@ async def start_(client: Client, message: Message):
 ██╔══██║██╔══██╗██╔══██║
 ██║░░██║██║░░██║██║░░██║
 ╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝𝗶𝗼𝗻 𝗮𝗯𝗼𝘂𝘁 𝗮𝗹𝗹 𝗳𝗲𝗮𝘁𝘂𝗿𝗲 𝗼𝗳 𝘁𝗵𝗶𝘀 𝗯𝗼𝘁, 𝗷𝘂𝘀𝘁 𝘁𝘆𝗽𝗲 /help**
-</b>""",
+,
         reply_markup=InlineKeyboardMarkup(
            [
                 [
