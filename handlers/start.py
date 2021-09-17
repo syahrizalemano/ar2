@@ -61,7 +61,7 @@ Commands 📌
 /lyric <song name> - lyrics
 /vk <song name> - buat lagu tanpa download
 /help untuk commands lainnya
-,
+""",
         reply_markup=InlineKeyboardMarkup(
            [
                 [
