@@ -97,7 +97,7 @@ async def generate_cover(title, thumbnail):
     Image.alpha_composite(image5, image6).save("temp.png")
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("etc/font.otf", 60)
+    font = ImageFont.truetype("etc/font.otf", 0)
     draw.text((40, 550), "Lagu nya...", (86, 109, 129), font=font)
     draw.text((40, 630), f"{title}", (97, 109, 129), font=font)
     img.save("final.png")
@@ -581,22 +581,22 @@ async def play(_, message: Message):
             toxxt = "✔️ __pilih lagu untuk di putar, :__\n\n"
             j = 0
             useer=user_name
-            emojilist = ["⒈","⒉","⒊","⒋","⒌"]
+            emojilist = ["⓵","⓶","⓷","⓸","⓹"]
             while j < 5:
                 toxxt += f"{emojilist[j]} [{results[j]['title'][:30]}](https://youtube.com{results[j]['url_suffix']})\n"
-                toxxt += f"  ̗̀➛⏰ **ᴅᴜʀᴀᴛɪᴏɴ** - {results[j]['duration']}\n"
-                toxxt += f"  ̗̀➛🚹  ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME} \n\n"
+                toxxt += f"  ➛⏰ **ᴅᴜʀᴀᴛɪᴏɴ** - {results[j]['duration']}\n"
+                toxxt += f"  ➛🚹  ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME} \n\n"
                 j += 1            
             keyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("⒈", callback_data=f'plll 0|{query}|{user_id}'),
-                        InlineKeyboardButton("⒉", callback_data=f'plll 1|{query}|{user_id}'),
-                        InlineKeyboardButton("⒊", callback_data=f'plll 2|{query}|{user_id}'),
+                        InlineKeyboardButton("⓵", callback_data=f'plll 0|{query}|{user_id}'),
+                        InlineKeyboardButton("⓶", callback_data=f'plll 1|{query}|{user_id}'),
+                        InlineKeyboardButton("⓷", callback_data=f'plll 2|{query}|{user_id}'),
                     ],
                     [
-                        InlineKeyboardButton("⒋", callback_data=f'plll 3|{query}|{user_id}'),
-                        InlineKeyboardButton("⒌", callback_data=f'plll 4|{query}|{user_id}'),
+                        InlineKeyboardButton("⓸", callback_data=f'plll 3|{query}|{user_id}'),
+                        InlineKeyboardButton("⓹", callback_data=f'plll 4|{query}|{user_id}'),
                     ],
                     [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
                 ]
@@ -762,7 +762,7 @@ async def lol_cb(b, cb):
         await b.send_photo(
         chat_id,
         photo="final.png",
-        caption=f"💡 **Track added to the queue**\n\n🔠 **Name:** [{title[:45]}]({url})\n🕛 **Duration:** `{duration}`\n🎧 **Request by:** {r_by.mention}\n" \
+        caption=f"💡 **Track added to the queue**\n\n🔠 **Name:** [{title[:45]}]({url})\n🕛 **Duration:** `{duration}`\n🎧 **Request by:** {message.from_user.mention}\n" \
                +f"\n🔢 **Track Position:** » `{position}` «",
         reply_markup=keyboard,
         )
@@ -785,7 +785,7 @@ async def lol_cb(b, cb):
         chat_id,
         photo="final.png",
         caption=f"🏷 **Name:** [{title[:45]}]({url})\n⏱ **Duration:** `{duration}`\n💡 **Status:** `Playing`\n" \
-               +f"🎧 **Request by:** {r_by.mention}",
+               +f"🎧 **Request by:** {message.from_user.mention}",
         reply_markup=keyboard,
         )
         if path.exists("final.png"):
