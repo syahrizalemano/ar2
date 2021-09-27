@@ -585,7 +585,7 @@ async def play(_, message: Message):
             while j < 6:
                 toxxt += f"{emojilist[j]} [{results[j]['title'][:30]}](https://youtube.com{results[j]['url_suffix']})\n"
                 toxxt += f" ̗̀➛⏰ **Duration** - {results[j]['duration']}\n"
-                toxxt += f" ̗̀➛🚹 __Powered by {BOT_NAME}"
+                toxxt += f" ̗̀➛🚹 __Powered by {BOT_NAME}\n"
                 j += 1            
             keyboard = InlineKeyboardMarkup(
                 [
@@ -654,6 +654,7 @@ async def play(_, message: Message):
     if chat_id in callsmusic.pytgcalls.active_calls:
         position = await queues.put(chat_id, file=file_path)
         qeue = que.get(chat_id)
+        groups = group_name
         s_name = title
         r_by = message.from_user
         loc = file_path
@@ -669,6 +670,7 @@ async def play(_, message: Message):
         chat_id = get_chat_id(message.chat)
         que[chat_id] = []
         qeue = que.get(chat_id)
+        groups = group_name
         s_name = title
         r_by = message.from_user
         loc = file_path
@@ -753,7 +755,8 @@ async def lol_cb(b, cb):
     if chat_id in callsmusic.pytgcalls.active_calls:
         position = await queues.put(chat_id, file=file_path)
         qeue = que.get(chat_id)
-        s_name = title
+       groups = group_name
+       s_name = title
         try:
             r_by = cb.message.reply_to_message.from_user
         except:
@@ -774,6 +777,7 @@ async def lol_cb(b, cb):
     else:
         que[chat_id] = []
         qeue = que.get(chat_id)
+        groups = group_name
         s_name = title
         try:
             r_by = cb.message.reply_to_message.from_user
@@ -904,6 +908,7 @@ async def ytplay(_, message: Message):
     if chat_id in callsmusic.pytgcalls.active_calls:
         position = await queues.put(chat_id, file=file_path)
         qeue = que.get(chat_id)
+        groups = group_name
         s_name = title
         r_by = message.from_user
         loc = file_path
@@ -921,6 +926,7 @@ async def ytplay(_, message: Message):
         chat_id = get_chat_id(message.chat)
         que[chat_id] = []
         qeue = que.get(chat_id)
+        groups = group_name
         s_name = title
         r_by = message.from_user
         loc = file_path
