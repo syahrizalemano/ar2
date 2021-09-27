@@ -582,7 +582,7 @@ async def play(_, message: Message):
             j = 0
             useer=user_name
             emojilist = ["⒈","⒉","⒊","⒋","⒌"]
-            while j < 6:
+            while j < 5:
                 toxxt += f"{emojilist[j]} [{results[j]['title'][:30]}](https://youtube.com{results[j]['url_suffix']})\n"
                 toxxt += f"  ̗̀➛⏰ **ᴅᴜʀᴀᴛɪᴏɴ** - {results[j]['duration']}\n"
                 toxxt += f"  ̗̀➛🚹  ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME} \n\n"
