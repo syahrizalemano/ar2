@@ -97,9 +97,9 @@ async def generate_cover(title, thumbnail):
     Image.alpha_composite(image5, image6).save("temp.png")
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("etc/font.otf", 30)
-    draw.text((40, 550), "Playing here...", (0, 0, 0), font=font)
-    draw.text((40, 630), f"{title}", (0, 0, 0), font=font)
+    font = ImageFont.truetype("etc/font.otf", 60)
+    draw.text((40, 550), "Lagu nya...", (86, 109, 129), font=font)
+    draw.text((40, 630), f"{title}", (97, 109, 129), font=font)
     img.save("final.png")
     os.remove("temp.png")
     os.remove("background.png")
@@ -421,7 +421,7 @@ async def play(_, message: Message):
     global useer
     if message.chat.id in DISABLED_GROUPS:
         return    
-    lel = await message.reply("🔄 **processing...**")
+    lel = await message.reply("🔄 **sebentar...**")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
     try:
@@ -529,7 +529,7 @@ async def play(_, message: Message):
         )
     elif urls:
         query = toxt
-        await lel.edit("🔎 **mencari lagu...**")
+        await lel.edit("🔎 **mencari lagu u...**")
         ydl_opts = {"format": "bestaudio[ext=m4a]"}
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
@@ -578,14 +578,14 @@ async def play(_, message: Message):
           await lel.edit("**beri judul lagu untuk saya putar !**")
         # veez project
         try:
-            toxxt = "👉 __pilih lagu untuk di putar, hehe:__\n\n"
+            toxxt = "✔️ __pilih lagu untuk di putar, :__\n\n"
             j = 0
             useer=user_name
-            emojilist = ["⒈","⒉","⒊","⒋","⒌","⒍"]
+            emojilist = ["⒈","⒉","⒊","⒋","⒌"]
             while j < 6:
                 toxxt += f"{emojilist[j]} [{results[j]['title'][:30]}](https://youtube.com{results[j]['url_suffix']})\n"
-                toxxt += f" ̗̀➛⏰ **Duration** - {results[j]['duration']}\n"
-                toxxt += f" ̗̀➛🚹 __Powered by {BOT_NAME}\n"
+                toxxt += f"  ̗̀➛⏰ **ᴅᴜʀᴀᴛɪᴏɴ** - {results[j]['duration']}\n"
+                toxxt += f"  ̗̀➛🚹  ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME} \n\n"
                 j += 1            
             keyboard = InlineKeyboardMarkup(
                 [
@@ -597,9 +597,6 @@ async def play(_, message: Message):
                     [
                         InlineKeyboardButton("⒋", callback_data=f'plll 3|{query}|{user_id}'),
                         InlineKeyboardButton("⒌", callback_data=f'plll 4|{query}|{user_id}'),
-                    ],
-                    [
-                        InlineKeyboardButton("⒍", callback_data=f'plll 5|{query}|{user_id}'),
                     ],
                     [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
                 ]
@@ -654,7 +651,6 @@ async def play(_, message: Message):
     if chat_id in callsmusic.pytgcalls.active_calls:
         position = await queues.put(chat_id, file=file_path)
         qeue = que.get(chat_id)
-        groups = group_name
         s_name = title
         r_by = message.from_user
         loc = file_path
@@ -662,7 +658,7 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption=f"💡 **Track added to the queue**\n\n🏷 **Name:** [{title[:45]}]({url})\n⏱ **Duration:** `{duration}`\n📳 **Di play di..:** {group}\n" \
+            caption=f"💡 **Track added to the queue**\n\n🏷 **Name:** [{title[:45]}]({url})\n⏱ **Duration:** `{duration}`\n🎧 **Request by:** {message.from_user.mention}\n" \
                    +f"\n🔢 **Track Position:** » `{position}` «",
             reply_markup=keyboard
         )
@@ -670,7 +666,6 @@ async def play(_, message: Message):
         chat_id = get_chat_id(message.chat)
         que[chat_id] = []
         qeue = que.get(chat_id)
-        groups = group_name
         s_name = title
         r_by = message.from_user
         loc = file_path
@@ -684,7 +679,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             caption=f"🔠 **Name:** [{title[:45]}]({url})\n🕛 **Duration:** `{duration}`\n📳 **Status:** `Playing`\n" \
-                   +f"📳 **Di play di..:** {groups}",
+                   +f"🎧 **Request by:** {message.from_user.mention}",
             reply_markup=keyboard
         )
         os.remove("final.png")
@@ -755,8 +750,7 @@ async def lol_cb(b, cb):
     if chat_id in callsmusic.pytgcalls.active_calls:
         position = await queues.put(chat_id, file=file_path)
         qeue = que.get(chat_id)
-       groups = group_name
-       s_name = title
+        s_name = title
         try:
             r_by = cb.message.reply_to_message.from_user
         except:
@@ -768,7 +762,7 @@ async def lol_cb(b, cb):
         await b.send_photo(
         chat_id,
         photo="final.png",
-        caption=f"💡 **Track added to the queue**\n\n🔠 **Name:** [{title[:45]}]({url})\n🕛 **Duration:** `{duration}`\n📳 **Di play di..:** {group}\n" \
+        caption=f"💡 **Track added to the queue**\n\n🔠 **Name:** [{title[:45]}]({url})\n🕛 **Duration:** `{duration}`\n🎧 **Request by:** {r_by.mention}\n" \
                +f"\n🔢 **Track Position:** » `{position}` «",
         reply_markup=keyboard,
         )
@@ -777,7 +771,6 @@ async def lol_cb(b, cb):
     else:
         que[chat_id] = []
         qeue = que.get(chat_id)
-        groups = group_name
         s_name = title
         try:
             r_by = cb.message.reply_to_message.from_user
@@ -792,7 +785,7 @@ async def lol_cb(b, cb):
         chat_id,
         photo="final.png",
         caption=f"🏷 **Name:** [{title[:45]}]({url})\n⏱ **Duration:** `{duration}`\n💡 **Status:** `Playing`\n" \
-               +f"📳 **Di play di..:** {groups}",
+               +f"🎧 **Request by:** {r_by.mention}",
         reply_markup=keyboard,
         )
         if path.exists("final.png"):
@@ -908,7 +901,6 @@ async def ytplay(_, message: Message):
     if chat_id in callsmusic.pytgcalls.active_calls:
         position = await queues.put(chat_id, file=file_path)
         qeue = que.get(chat_id)
-        groups = group_name
         s_name = title
         r_by = message.from_user
         loc = file_path
@@ -917,7 +909,7 @@ async def ytplay(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             caption = f"🏷 **Name:** [{title[:25]}]({url})\n⏱ **Duration:** `{duration}`\n💡 **Status:** `Queued position {position}`\n" \
-                    + f"📳 **Di play di..:** {groups}",
+                    + f"🎧 **Request by:** {message.from_user.mention}",
                    reply_markup=keyboard,
         )
         os.remove("final.png")
@@ -926,7 +918,6 @@ async def ytplay(_, message: Message):
         chat_id = get_chat_id(message.chat)
         que[chat_id] = []
         qeue = que.get(chat_id)
-        groups = group_name
         s_name = title
         r_by = message.from_user
         loc = file_path
@@ -940,7 +931,7 @@ async def ytplay(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             caption = f"🏷 **Name:** [{title[:25]}]({url})\n⏱ **Duration:** `{duration}`\n💡 **Status:** `Playing`\n" \
-                    + f"📳 **Di play di..:** {groups}",
+                    + f"🎧 **Request by:** {message.from_user.mention}",
                    reply_markup=keyboard,)
         os.remove("final.png")
         return await lel.delete()
