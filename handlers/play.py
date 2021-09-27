@@ -578,14 +578,14 @@ async def play(_, message: Message):
           await lel.edit("**beri judul lagu untuk saya putar !**")
         # veez project
         try:
-            toxxt = "👑 __pilih lagu untuk di putar, hehe:__\n\n"
+            toxxt = "👉 __pilih lagu untuk di putar, hehe:__\n\n"
             j = 0
             useer=user_name
             emojilist = ["⒈","⒉","⒊","⒋","⒌","⒍"]
             while j < 6:
                 toxxt += f"{emojilist[j]} [{results[j]['title'][:30]}](https://youtube.com{results[j]['url_suffix']})\n"
-                toxxt += f": ̗̀➛⏰ **Duration** - {results[j]['duration']}\n"
-                toxxt += f": ̗̀➛🚹 __Powered by {BOT_NAME} A.I__\n\n"
+                toxxt += f" ̗̀➛⏰ **Duration** - {results[j]['duration']}\n"
+                toxxt += f" ̗̀➛🚹 __Powered by {BOT_NAME}"
                 j += 1            
             keyboard = InlineKeyboardMarkup(
                 [
@@ -661,7 +661,7 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption=f"💡 **Track added to the queue**\n\n🏷 **Name:** [{title[:45]}]({url})\n⏱ **Duration:** `{duration}`\n🎧 **Request by:** {message.from_user.mention}\n" \
+            caption=f"💡 **Track added to the queue**\n\n🏷 **Name:** [{title[:45]}]({url})\n⏱ **Duration:** `{duration}`\n📳 **Di play di..:** {group}\n" \
                    +f"\n🔢 **Track Position:** » `{position}` «",
             reply_markup=keyboard
         )
@@ -682,7 +682,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             caption=f"🔠 **Name:** [{title[:45]}]({url})\n🕛 **Duration:** `{duration}`\n📳 **Status:** `Playing`\n" \
-                   +f"🎧 **Request by:** {message.from_user.mention}",
+                   +f"📳 **Di play di..:** {groups}",
             reply_markup=keyboard
         )
         os.remove("final.png")
@@ -765,7 +765,7 @@ async def lol_cb(b, cb):
         await b.send_photo(
         chat_id,
         photo="final.png",
-        caption=f"💡 **Track added to the queue**\n\n🔠 **Name:** [{title[:45]}]({url})\n🕛 **Duration:** `{duration}`\n🎧 **Request by:** {r_by.mention}\n" \
+        caption=f"💡 **Track added to the queue**\n\n🔠 **Name:** [{title[:45]}]({url})\n🕛 **Duration:** `{duration}`\n📳 **Di play di..:** {group}\n" \
                +f"\n🔢 **Track Position:** » `{position}` «",
         reply_markup=keyboard,
         )
@@ -788,7 +788,7 @@ async def lol_cb(b, cb):
         chat_id,
         photo="final.png",
         caption=f"🏷 **Name:** [{title[:45]}]({url})\n⏱ **Duration:** `{duration}`\n💡 **Status:** `Playing`\n" \
-               +f"🎧 **Request by:** {r_by.mention}",
+               +f"📳 **Di play di..:** {groups}",
         reply_markup=keyboard,
         )
         if path.exists("final.png"):
@@ -912,7 +912,7 @@ async def ytplay(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             caption = f"🏷 **Name:** [{title[:25]}]({url})\n⏱ **Duration:** `{duration}`\n💡 **Status:** `Queued position {position}`\n" \
-                    + f"🎧 **Request by:** {message.from_user.mention}",
+                    + f"📳 **Di play di..:** {groups}",
                    reply_markup=keyboard,
         )
         os.remove("final.png")
@@ -934,7 +934,7 @@ async def ytplay(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             caption = f"🏷 **Name:** [{title[:25]}]({url})\n⏱ **Duration:** `{duration}`\n💡 **Status:** `Playing`\n" \
-                    + f"🎧 **Request by:** {message.from_user.mention}",
+                    + f"📳 **Di play di..:** {groups}",
                    reply_markup=keyboard,)
         os.remove("final.png")
         return await lel.delete()
