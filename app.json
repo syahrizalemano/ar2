@@ -102,7 +102,7 @@
     },
     "buildpacks": [
     {
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+      "url": "https://github.com/FFmpeg/FFmpeg.git"
     },
     {
       "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
