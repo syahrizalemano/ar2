@@ -4,7 +4,9 @@
     "description": "Veez Music project allow you to stream music trought the telegram voice chat feature.",
     "keywords": ["am"],
     "repository": "https://github.com/syahrizalemano/ar2",
-    "stack": "heroku-18",
+    "stack": "heroku-20",
+    "success_url": "/welcome",
+    "website": "https://small-sharp-tool.com/",
     "env": {
         "SESSION_NAME": {
             "description": "fill with the pyrogram session string",
