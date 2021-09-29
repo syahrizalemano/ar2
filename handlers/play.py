@@ -581,22 +581,28 @@ async def play(_, message: Message):
             toxxt = "✔️ __pilih lagu untuk di putar, :__\n\n"
             j = 0
             useer=user_name
-            emojilist = ["⓵","⓶","⓷","⓸","⓹"]
-            while j < 5:
+            emojilist = ["1⃣","2⃣","3⃣","4⃣","5⃣","6⃣","7⃣","8⃣","9⃣"]
+            while j < 9:
                 toxxt += f"{emojilist[j]} [{results[j]['title'][:30]}](https://youtube.com{results[j]['url_suffix']})\n"
-                toxxt += f"  ➛⏰ **ᴅᴜʀᴀᴛɪᴏɴ** - {results[j]['duration']}\n"
-                toxxt += f"  ➛🚹  ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME} \n\n"
+                toxxt += f"  ➛ ⏰ **ᴅᴜʀᴀᴛɪᴏɴ** - {results[j]['duration']}\n"
+                toxxt += f"  ➛ 🚹  ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME} \n\n"
                 j += 1            
             keyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("⓵", callback_data=f'plll 0|{query}|{user_id}'),
-                        InlineKeyboardButton("⓶", callback_data=f'plll 1|{query}|{user_id}'),
-                        InlineKeyboardButton("⓷", callback_data=f'plll 2|{query}|{user_id}'),
+                        InlineKeyboardButton("1⃣", callback_data=f'plll 0|{query}|{user_id}'),
+                        InlineKeyboardButton("2⃣", callback_data=f'plll 1|{query}|{user_id}'),
+                        InlineKeyboardButton("3⃣", callback_data=f'plll 2|{query}|{user_id}'),
                     ],
                     [
-                        InlineKeyboardButton("⓸", callback_data=f'plll 3|{query}|{user_id}'),
-                        InlineKeyboardButton("⓹", callback_data=f'plll 4|{query}|{user_id}'),
+                        InlineKeyboardButton("4⃣", callback_data=f'plll 3|{query}|{user_id}'),
+                        InlineKeyboardButton("5⃣", callback_data=f'plll 4|{query}|{user_id}'),
+                        InlineKeyboardButton("6⃣", callback_data=f'plll 5|{query}|{user_id}'),
+                        InlineKeyboardButton("7⃣", callback_data=f'plll 6|{query}|{user_id}')                       
+                    ],
+                    [
+                        InlineKeyboardButton("8⃣", callback_data=f'plll 0|{query}|{user_id}'),
+                        InlineKeyboardButton("9⃣", callback_data=f'plll 1|{query}|{user_id}'),
                     ],
                     [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
                 ]
