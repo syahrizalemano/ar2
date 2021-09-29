@@ -597,12 +597,12 @@ async def play(_, message: Message):
                     [
                         InlineKeyboardButton("4⃣", callback_data=f'plll 3|{query}|{user_id}'),
                         InlineKeyboardButton("5⃣", callback_data=f'plll 4|{query}|{user_id}'),
-                        InlineKeyboardButton("6⃣", callback_data=f'plll 5|{query}|{user_id}'),
-                        InlineKeyboardButton("7⃣", callback_data=f'plll 6|{query}|{user_id}')                       
+                        InlineKeyboardButton("6⃣", callback_data=f'plll 5|{query}|{user_id}'),                       
                     ],
                     [
-                        InlineKeyboardButton("8⃣", callback_data=f'plll 0|{query}|{user_id}'),
-                        InlineKeyboardButton("9⃣", callback_data=f'plll 1|{query}|{user_id}'),
+                        InlineKeyboardButton("7⃣", callback_data=f'plll 6|{query}|{user_id}')
+                        InlineKeyboardButton("8⃣", callback_data=f'plll 7|{query}|{user_id}'),
+                        InlineKeyboardButton("9⃣", callback_data=f'plll 8|{query}|{user_id}'),
                     ],
                     [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
                 ]
