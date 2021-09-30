@@ -1,9 +1,11 @@
 git+https://github.com/pyrogram/pyrogram@master
 tgcrypto
-py-tgcalls==0.8.0
+py-tgcalls==0.5.5
 python-dotenv
 youtube_dl
-youtube_search_python
+youtube_search_python==1.4.6
+googletrans==4.0.0rc1
+gTTS
 requests
 aiohttp
 aiofiles
@@ -19,7 +21,10 @@ motor
 dnspython
 bs4
 pyaml
-atatus
+yt_dlp
+httpx==0.13.3
+heroku3
+gitpython
 cchardet
 aiodns
 aiohttp[speedups]
