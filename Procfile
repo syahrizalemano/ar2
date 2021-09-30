@@ -1,1 +1,1 @@
-web: gunicorn yoursite.wsgi
+worker: python3 main.py
