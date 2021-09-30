@@ -1,10 +1,10 @@
 pyrogram
 tgcrypto
-py-tgcalls==0.5.5
+py-tgcalls==2.1.0
 python-dotenv
 youtube_dl
-youtube_search_python==1.4.6
-requests
+youtube_search_python==1.4.9
+requests==2.26.0
 aiohttp
 aiofiles
 asyncio
@@ -20,3 +20,6 @@ dnspython
 bs4
 pyaml
 atatus
+cchardet
+aiodns
+aiohttp[speedups]
